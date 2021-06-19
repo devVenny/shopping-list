@@ -21,6 +21,11 @@ function paintList(text){
     deleteBtn.setAttribute('class', 'item__button');
     deleteBtn.textContent='X'
 
+    deleteBtn.addEventListener('click', (e) => {
+        const target =  e.target.parentNode;
+        items.removeChild(target);
+    });
+
     li.append(span);
     li.append(deleteBtn);
     items.append(li);
