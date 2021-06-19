@@ -9,11 +9,16 @@ body{
     z-index:-10;
 }
 
+button{
+    all:unset;
+    cursor:pointer;
+}
+
 /* list-paper */
 
 .list-paper{
     width:400px;
-    height:70vh;
+    height:80vh;
     background-image: linear-gradient(90deg, #e8b6b6, 2px, rgba(255,255,255,0), 2px, rgba(255,255,255,0)), linear-gradient(0, #d9eaf3, 1px, rgba(255,255,255,0), 2px, rgba(255,255,255,0));
     background-position: 4rem 0;
     background-size: 100% 2.4rem;
@@ -25,8 +30,16 @@ body{
     position: relative;
 }
 
+/* list-items */
+li{
+    list-style: none;
+    display:flex;
+    justify-content: space-between;
+}
+
 .list__items{
     display:flex;
+    flex-direction: column;
     justify-content: space-between;
     margin:20px auto;
     width:60%;
