@@ -10,6 +10,7 @@ const input = document.querySelector('.input');
 const items = document.querySelector('.list__items');
 
 function paintList(text){
+
     const li = document.createElement("li");
     li.setAttribute('class', 'item');
 
@@ -21,14 +22,36 @@ function paintList(text){
     deleteBtn.setAttribute('class', 'item__button');
     deleteBtn.textContent='X'
 
+    li.append(span);
+    li.append(deleteBtn);
+    items.append(li);
+
+// Scroll
+
+    li.scrollIntoView();
+
+// Delete button
+
     deleteBtn.addEventListener('click', (e) => {
         const target =  e.target.parentNode;
         items.removeChild(target);
     });
 
-    li.append(span);
-    li.append(deleteBtn);
-    items.append(li);
+// All clear button
+// *문제* 누를 때 마다 clear 되긴하는데 두번 쨰 클리어 할 떄마다 오류 발생. 'li가 items의 노드가 아니다'
+    
+    const AllClearBtn = document.querySelector('.fa-plus-circle');
+
+    AllClearBtn.addEventListener('click', () => {
+        const lists = document.querySelectorAll('.item');
+        const listsArray = Array.from(lists);
+    
+        if(listsArray.length !== 0){
+            items.removeChild(li);
+        }else{
+            console.log("nothing");
+        }
+    });
 }
 
 function onAdd(e){
@@ -39,3 +62,9 @@ function onAdd(e){
 }
 
 form.addEventListener('submit', onAdd);
+
+
+
+
+
+
