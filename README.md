@@ -3,6 +3,7 @@
 ## Main Function
 1. add a shopping list
 2. delete a shopping list
+3. delete all shopping lists
 
 ## Detail in each function
 
